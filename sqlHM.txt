@@ -1,0 +1,35 @@
+1
+SELECT s.name AS "Salesman", c.cust_name, c.city
+FROM salesman AS s
+INNER JOIN customer AS c
+ON c.salesman_id = s.salesman_id
+WHERE s.city = c.city;
+
+2
+SELECT o.ord_no, o.purch_amt, c.cust_name, c.city
+FROM orders AS o
+INNER JOIN customer AS c
+ON o.salesman_id = c.salesman_id
+WHERE o.purch_amt BETWEEN 500 AND 2000;
+
+3
+SELECT c.cust_name AS "CustomerName", s.city, s.name AS "Salesman", s.commission
+FROM customer AS c
+INNER JOIN salesman AS s
+ON s.salesman_id = c.salesman_id;
+
+4
+SELECT c.cust_name AS "CustomerName", s.city, s.name AS "Salesman", s.commission
+FROM customer AS c
+INNER JOIN salesman AS s
+ON s.salesman_id = c.salesman_id
+WHERE s.commission > 0.12;
+
+5
+SELECT c.cust_name AS "CustomerName", s.city, s.name AS "Salesman", s.commission
+FROM customer AS c
+INNER JOIN salesman AS s
+ON s.salesman_id = c.salesman_id
+WHERE s.city != c.city AND s.commission > 0.12;
+
+6
